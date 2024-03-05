@@ -11,6 +11,8 @@ import "config/size_config.dart";
 class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
       body: SafeArea(
         child: Row(
@@ -30,14 +32,36 @@ class Dashboard extends StatelessWidget {
             Expanded(
               flex: 4,
               child: Container(
-                  width: double.infinity,
-                  height: SizeConfig.screenHeight,
-                  color: AppColors.secondaryBg,
-                  padding:
-                      EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
-                  child: Column(
-                    children: [AppBarActionItems()],
-                  )),
+                width: double.infinity,
+                height: SizeConfig.screenHeight,
+                color: AppColors.secondaryBg,
+                padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+                child: Column(
+                  children: [
+                    AppBarActionItems(),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: SizeConfig.blockSizeVertical! * 5,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.iconGray,
+                                blurRadius: 15.0,
+                                offset: const Offset(10.0, 15.0),
+                              ),
+                            ],
+                          ),
+                          child: Image.asset("assets/images/card.png"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),
