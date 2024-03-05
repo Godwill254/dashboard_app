@@ -1,0 +1,50 @@
+name: dashboard_app
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.2.4 <4.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+    
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets: 
+    - assets/images/bank.svg
+    - assets/images/calendar.svg
+    - assets/images/card.png
+    - assets/images/clipboard.svg
+    - assets/images/credit-card.svg
+    - assets/images/document.svg
+    - assets/images/drop.svg
+    - assets/images/electricity.svg
+    - assets/images/home.svg
+    - assets/images/invoice.svg
+    - assets/images/mac-action.svg
+    - assets/images/man.jpeg
+    - assets/images/pie-chart.svg
+    - assets/images/ring.svg
+    - assets/images/salary.svg
+    - assets/images/search.svg
+    - assets/images/transfer.svg
+    - assets/images/trophy.svg
+    - assets/images/wifi.svg
+
+
+
+  fonts:
+    - family: "Kalnia"
+      fonts:
+        - asset: assets/fonts/Kalnia/static/Kalnia-Regular.ttf
+        - asset: assets/fonts/Kalnia/static/Kalnia-Medium.ttf
