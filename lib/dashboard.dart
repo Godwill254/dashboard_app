@@ -1,9 +1,11 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, deprecated_member_use
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, deprecated_member_use, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
+import "package:dashboard_app/component/appBarActionItems.dart";
 import "package:dashboard_app/style/colors.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/flutter_svg.dart";
 
+import "component/sidemenu.dart";
 import "config/size_config.dart";
 
 class Dashboard extends StatelessWidget {
@@ -16,83 +18,7 @@ class Dashboard extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Container(
-                width: double.infinity,
-                height: SizeConfig.screenHeight,
-                color: AppColors.secondaryBg,
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        height: 100,
-                        alignment: Alignment.topCenter,
-                        padding: EdgeInsets.only(top: 20),
-                        child: SizedBox(
-                          width: 35,
-                          height: 35,
-                          child:
-                              SvgPicture.asset('assets/images/mac-action.svg'),
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/home.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/pie-chart.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/clipboard.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/credit-card.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/trophy.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/images/invoice.svg',
-                          color: AppColors.iconGray,
-                        ),
-                        iconSize: 20,
-                        padding: EdgeInsets.symmetric(vertical: 20.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              child: SideMenu(),
             ),
             Expanded(
               flex: 10,
@@ -104,10 +30,14 @@ class Dashboard extends StatelessWidget {
             Expanded(
               flex: 4,
               child: Container(
-                width: double.infinity,
-                height: SizeConfig.screenHeight,
-                color: AppColors.secondaryBg,
-              ),
+                  width: double.infinity,
+                  height: SizeConfig.screenHeight,
+                  color: AppColors.secondaryBg,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+                  child: Column(
+                    children: [AppBarActionItems()],
+                  )),
             )
           ],
         ),
